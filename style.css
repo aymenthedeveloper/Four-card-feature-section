@@ -1,0 +1,112 @@
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 97%);
+    --gap: 2em;
+  }
+  body{
+    font-family: "poppins", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--Very-Light-Gray);
+  }
+  main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3.4rem 2rem;
+    max-width: 70em;
+    margin: auto;
+  }
+  main h1{
+    font-size: clamp(1.3rem, 2vw + 1rem ,2.28rem);
+    color: var(--Very-Dark-Blue);
+    line-height: 146%;
+    margin-bottom: 0;
+  }
+  main h1 span{
+    font-weight: 200;
+    display: block;
+  }
+  main > p{
+    max-width: 55ch;
+    font-size: 1rem;
+    margin-bottom: 3.875em;
+    color: var(--Grayish-Blue);
+  }
+  main .cards{
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+  }
+  main .cards .card h3{
+    color: var(--Very-Dark-Blue);
+    font-size: 1.3rem;
+    margin: 0 auto;
+  }
+  main .cards .card p{
+    color: var(--Grayish-Blue);
+    font-size: 0.875rem;
+    margin-bottom: 3em;
+  }
+  main .cards .mid-cards{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+  main .card{
+    background-color: #fff;
+    min-height: 5.5em;
+    padding: 1.5em 2em;
+    border-radius: 10px;
+    border-block-start: 4px solid;
+    text-align: left;
+  }
+  main .card p{
+    max-width: 35ch;
+  }
+  main .card img{
+    float: right;
+  }
+  main .cards .card:first-of-type{
+    border-block-start-color: var(--Cyan);
+  }
+  main .cards .mid-cards .card:first-child{
+    border-block-start-color: var(--Red);
+  }
+  main .cards .mid-cards .card:last-child{
+    border-block-start-color: var(--Orange);
+  }
+  main .cards .card:last-child{
+    border-block-start-color: var(--Blue);
+  }
+  @media (max-width: 60em) {
+    main .cards{
+      flex-direction: column;
+    }
+    main .cards > .card{
+      max-width: clamp(15em, 40%, 20em);
+    }
+    main .cards .mid-cards{
+      flex-direction: row;
+    }
+  }
+  @media (max-width: 38em) {
+    main{
+      padding-inline: 1em;
+    }
+    main > h1{
+      margin-top: 1.4em;
+    }
+    main .cards > .card{
+      max-width: revert;
+    }
+    main .cards .mid-cards{
+      flex-direction: column;
+    }
+  }
